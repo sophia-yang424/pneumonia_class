@@ -47,7 +47,9 @@ y_test = [ex["label"] for ex in test_ds]
 # --- 6. Train a simple classifier head on frozen embeddings ---
 clf = LogisticRegression(max_iter=1000)
 clf.fit(X_train, y_train)
-
+##i chose a logisitc rgeression classifier because it is a simple linear classifier for binar classifcation
+#also, the original resent model had a final ilnear layer, logisitc regression is also a linear classifier
+#alsi i wanted to see if the logisitc regression performs well: if it does, that means our data is linearly separable
 # --- 7. Evaluate ---
 preds = clf.predict(X_test)
 print("Accuracy:", accuracy_score(y_test, preds))
