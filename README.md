@@ -25,3 +25,5 @@ the grad settings are turned off, since I froze the backbone, although I do not 
 
 
 why fine tune? because it improves your model performance from just using what it was pretrained with
+
+random seed based ensembling bc originally it was non determinusitc
