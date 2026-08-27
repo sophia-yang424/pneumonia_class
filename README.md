@@ -1,0 +1,1 @@
+This is a small app made by applying trasnfer learning on Resnet-18 Image classification CNN. In the Gradio app, you can flag noteworthy cases and save as csv to further train the model's head. New model head is a logisitc regression classifier built for this use case.
