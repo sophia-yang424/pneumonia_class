@@ -1,4 +1,4 @@
-This is a small app made by applying linear probing transfer learning on Resnet-18 Image classification CNN. In the Gradio app, you can flag noteworthy cases and save as csv to further train the model's head. New model head is a logistic regression classifier built for this use case.
+This is a small app made by applying linear probing transfer learning evaluation on Resnet-18 Image classification CNN. In the Gradio app, you can flag noteworthy cases and save as csv to further train the model's head. New model head is a logistic regression classifier built for this use case.
 
 I decided to start with linear probing, to decide on whether transferring learning or more expensive fine tuning was needed. My probed model received the following scores:
 Accuracy: 0.8814102564102564
