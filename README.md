@@ -1,1 +1,4 @@
 This is a small app made by applying trasnfer learning on Resnet-18 Image classification CNN. In the Gradio app, you can flag noteworthy cases and save as csv to further train the model's head. New model head is a logisitc regression classifier built for this use case.
+
+I preprocess the image data in the same way that the Resnet model does to ensure compatibility (under the hood pytorch will resize the images and apply other needed image transformations exactly how resnet's own pretraining data did). I then allow the preprocessed image data to complete a forward pass in the Resnet18 backbone to get the embeddings that would have been passed to the final linear classifier head in Resnet. Then I feed those into my logistic regression head which is trained on these embedding inputs. 
+I do the same for the test data, then make my trained logistic regression classify those test image data imbeddings.
