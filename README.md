@@ -22,3 +22,6 @@ Accuracy: 0.8958333333333334
 It seems that the recall of the negative class improved, but is still lacking compared to the positive class. Thus my next step will be to examine if fine tuning produces better results.
 
 the grad settings are turned off, since I froze the backbone, although I do not call backward() and step() to do backprop anywhere so no training/gradients/updates are made. This disabling of grad is just to make sure no memory is waste don pytorch making computation graphs which it does by default. I also loaded the backbone specifically, so excluding the head with HuggingFace AutoModel function which does that for whatever hugging face model you specify
+
+
+why fine tune? because it improves your model performance from just using what it was pretrained with
