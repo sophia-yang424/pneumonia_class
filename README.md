@@ -40,6 +40,7 @@ log10(4e-5) = log10(4 * 10^-5) = log10(4) + log10(10^-5) ≈ 0.602 - 5 = -4.398 
 
 fine tuned, using model 7:
 hyperparamters: 'learning_rate': 3.713408826464528e-05, 'num_train_epochs': 3, 'weight_decay': 0.09730862815310555, 'per_device_train_batch_size': 16, seed = 42
+
 --- Detailed Classification Report for Trial 7 Model ---
               precision    recall  f1-score   support
 
@@ -49,3 +50,21 @@ hyperparamters: 'learning_rate': 3.713408826464528e-05, 'num_train_epochs': 3, '
     accuracy                           0.91       200
    macro avg       0.92      0.89      0.90       200
 weighted avg       0.92      0.91      0.90       200
+
+decide not to prune since my epoch number is low anyways (2-3) since we are fine tuning
+
+load_best_model_at_end=True, each trial we keep the best epoch for accuracy not last epoch
+I used optuna for hyperparamters, then did seed ensembling with following seeds: [42, 101, 202, 303, 404]
+
+Loading model from /content/drive/MyDrive/my_ml_models/fine_tuned_pneumonia_model_best_hp_ensemble/model_seed_42/checkpoint-150...
+seed 42 for optuna trial 7's hyperparamters
+
+--- Classification Report for: checkpoint-150 ---
+              precision    recall  f1-score   support
+
+      normal       0.99      0.85      0.91        84
+   pneumonia       0.90      0.99      0.94       116
+
+    accuracy                           0.93       200
+   macro avg       0.94      0.92      0.93       200
+weighted avg       0.94      0.93      0.93       200
