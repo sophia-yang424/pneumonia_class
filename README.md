@@ -26,4 +26,26 @@ the grad settings are turned off, since I froze the backbone, although I do not 
 
 why fine tune? because it improves your model performance from just using what it was pretrained with
 
-random seed based ensembling bc originally it was non determinusitc
+random seed based ensembling bc originally it was non deterministic
+
+
+Fine tuning, used optuna to vary:
+-learning rate (log sampling, to account for how linear sampling will give disproportionality certain regions with more widht. We do log sampling such that we sample float values for x from -6 to -4.398. derivation: log10(1e-6) = -6
+log10(4e-5) = log10(4 * 10^-5) = log10(4) + log10(10^-5) ≈ 0.602 - 5 = -4.398 So, in the base-10 log-space, the range is roughly [-6, -4.398]. ) on range 1e^-6 to 4e^-5
+-epochs from 2 to 3
+-weight decay (for regularization to prevent big weights/overfitting): 0.075 to 0.2
+-batch size: 8,16,32,64 (mini batch size which is how many examples used per update, 1600 training examples total)
+-dropout: 0.1, 0.5
+--started from bigger range to smaller based on the best performing trails of hyperparameters selected
+
+fine tuned, using model 7:
+hyperparamters: 'learning_rate': 3.713408826464528e-05, 'num_train_epochs': 3, 'weight_decay': 0.09730862815310555, 'per_device_train_batch_size': 16, seed = 42
+--- Detailed Classification Report for Trial 7 Model ---
+              precision    recall  f1-score   support
+
+      normal       0.99      0.79      0.87        84
+   pneumonia       0.86      0.99      0.92       116
+
+    accuracy                           0.91       200
+   macro avg       0.92      0.89      0.90       200
+weighted avg       0.92      0.91      0.90       200
