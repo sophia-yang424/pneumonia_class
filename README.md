@@ -41,6 +41,11 @@ log10(4e-5) = log10(4 * 10^-5) = log10(4) + log10(10^-5) ≈ 0.602 - 5 = -4.398 
 fine tuned, using model 7:
 hyperparamters: 'learning_rate': 3.713408826464528e-05, 'num_train_epochs': 3, 'weight_decay': 0.09730862815310555, 'per_device_train_batch_size': 16, seed = 42
 
+Epoch	Train Loss	Val Loss	Accuracy	F1
+1	0.155	0.457	0.815	0.803
+2	0.083	0.236	0.925	0.924
+3	0.033	0.345	0.905	0.903
+
 --- Detailed Classification Report for Trial 7 Model ---
               precision    recall  f1-score   support
 
@@ -68,6 +73,7 @@ seed 42 for optuna trial 7's hyperparamters
     accuracy                           0.93       200
    macro avg       0.94      0.92      0.93       200
 weighted avg       0.94      0.93      0.93       200
+
 
 
 To run app:
