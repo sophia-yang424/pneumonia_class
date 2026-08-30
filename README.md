@@ -24,7 +24,7 @@ It seems that the recall of the negative class improved, but is still lacking co
 the grad settings are turned off, since I froze the backbone, although I do not call backward() and step() to do backprop anywhere so no training/gradients/updates are made. This disabling of grad is just to make sure no memory is waste don pytorch making computation graphs which it does by default. I also loaded the backbone specifically, so excluding the head with HuggingFace AutoModel function which does that for whatever hugging face model you specify
 
 
-why fine tune? because it improves your model performance from just using what it was pretrained with
+why fine tune? because it improves your model performance from just using what it was pretrained with. Fine tuning because of the pretrained backbone not being able to recall normal class as well (predicts penuonia too much. The pretarined backbone finds the embeddings then we train a LR head to classify those as pneumonia/not pneumonia, the embeddings they did didnt separate the classes well enough to fit a good line to separate since LR is linear classifier). So i resolved this by fine tuning with a 50-50 split (800 pneumonia then using pytorch's random augmenter I augmented from only 200 normal examples to be 800) that way the model's backbone will be able to learn evenly how to make good linearly separable embeddings for both classes, rather than just being biased to say everything is pneumonia (class 1)
 
 random seed based ensembling bc originally it was non deterministic
 
