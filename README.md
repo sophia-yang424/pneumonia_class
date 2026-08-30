@@ -43,7 +43,7 @@ hyperparamters: 'learning_rate': 3.713408826464528e-05, 'num_train_epochs': 3, '
 
 Epoch	Train Loss	Val Loss	Accuracy	F1
 1	0.155	0.457	0.815	0.803
-2	0.083	0.236	0.925	0.924
+2	0.083	0.236	0.925	0.924 //(starts overfitting at trial 3, early stopping)
 3	0.033	0.345	0.905	0.903
 
 --- Detailed Classification Report for Trial 7 Model ---
