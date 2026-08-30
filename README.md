@@ -73,3 +73,5 @@ weighted avg       0.94      0.93      0.93       200
 To run app:
 run the mounting cell st notebook can access google drive to retrieve the model
 run the gradio app code cell
+
+Final model in : /content/drive/MyDrive/my_ml_models/fine_tuned_pneumonia_model_best_hp_ensemble/model_seed_42
