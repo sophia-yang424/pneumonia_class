@@ -75,3 +75,5 @@ run the mounting cell st notebook can access google drive to retrieve the model
 run the gradio app code cell
 
 Final model in : /content/drive/MyDrive/my_ml_models/fine_tuned_pneumonia_model_best_hp_ensemble/model_seed_42
+
+Didnt do LoRa because im fine tuning a CNN which is small enough to where fine tuning isnt too costly, but when I do an NLP project LoRa is probably better because more parameters
